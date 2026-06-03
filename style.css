@@ -1,44 +1,254 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial;
-    background: #f4f4f4;
+
+    font-family:'Segoe UI',sans-serif;
+
+    background-image:url('dna.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    min-height:100vh;
 }
 
-.container{
-    width: 700px;
-    margin: 50px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
+.overlay{
+
+    background:rgba(255,255,255,.70);
+
+    min-height:100vh;
+
+    padding-bottom:50px;
 }
 
-input{
-    padding: 10px;
-    margin: 5px;
-    width: 200px;
+.header{
+
+    height:120px;
+
+    background:#07105a;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
 }
 
-button{
-    padding: 10px 15px;
-    background: blue;
-    color: white;
-    border: none;
+.logo{
+
+    font-size:48px;
+    font-weight:bold;
+}
+
+.search-bar{
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    width:500px;
+
+    display:flex;
+}
+
+.search-bar input{
+
+    border:none;
+
+    flex:1;
+
+    padding:15px;
+}
+
+.search-bar button{
+
+    border:none;
+
+    background:white;
+
+    padding:15px;
+
+    cursor:pointer;
+}
+
+.card{
+
+    width:650px;
+
+    margin:50px auto 30px auto;
+
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 25px rgba(0,0,0,.15);
+}
+
+.card-header{
+
+    background:#0b5ad5;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    font-size:36px;
+
+    font-weight:bold;
+}
+
+.card h2{
+
+    text-align:center;
+
+    margin:35px 0;
+
+    color:#10245f;
+}
+
+form{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    padding-bottom:30px;
+}
+
+form input{
+
+    padding:18px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:10px;
+
+    font-size:18px;
+}
+
+.register-btn{
+
+    background:#0b5ad5;
+
+    color:white;
+
+    border:none;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    font-size:24px;
+
+    cursor:pointer;
+}
+
+.table-card{
+
+    width:90%;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:0 0 25px rgba(0,0,0,.15);
+}
+
+.table-card h2{
+
+    margin-bottom:20px;
+
+    text-align:center;
 }
 
 table{
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
+
+    width:100%;
+
+    border-collapse:collapse;
 }
 
-table, th, td{
-    border: 1px solid #ddd;
+th{
+
+    background:#0b5ad5;
+
+    color:white;
 }
 
-th, td{
-    padding: 10px;
-    text-align: center;
+th,
+td{
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
 }
 
-a{
-    text-decoration: none;
+.edit-btn{
+
+    background:#16a34a;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+}
+
+.delete-btn{
+
+    background:#dc2626;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    margin-left:5px;
+}
+.back-btn{
+    background:#6b7280;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:18px;
+    border-radius:10px;
+    font-size:20px;
+    display:block;
+}
+
+.back-btn:hover{
+    background:#4b5563;
+}
+
+tr:hover{
+    background:#f3f4f6;
 }

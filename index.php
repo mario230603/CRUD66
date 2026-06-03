@@ -1,97 +1,136 @@
 <?php
-
 include 'db.php';
-
 $result = $conn->query("SELECT * FROM users");
-
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioGenAnalyzer</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<div class="container">
+<header class="header">
 
-    <h2>Registro de Usuarios BioGenAnalyzer</h2>
+    <div class="logo">
+        BioGenAnalyzer
+    </div>
 
-    <form action="insert.php" method="POST">
-
-        <input
-            type="text"
-            name="nombre"
-            placeholder="Ingrese nombre"
-            required
-        >
-
-        <input
-            type="text"
-            name="apellido"
-            placeholder="Ingrese apellido"
-            required
-        >
-
-        <input
-            type="email"
-            name="correo"
-            placeholder="Ingrese correo"
-            required
-        >
-
-        <input
-            type="password"
-            name="password"
-            placeholder="Ingrese contraseña"
-            required
-        >
-
-        <button type="submit">
-            Registrar Usuario
+    <div class="search-bar">
+        <input type="search" placeholder="Buscar...">
+        <button>
+            <i class="fas fa-search"></i>
         </button>
+    </div>
 
-    </form>
+</header>
 
-    <table>
+<div class="overlay">
 
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Correo</th>
-            <th>Acción</th>
-        </tr>
+    <div class="card">
 
-        <?php while($row = $result->fetch_assoc()) { ?>
+        <div class="card-header">
+            <i class="fas fa-dna"></i>
+            BioGenAnalyzer
+        </div>
 
-        <tr>
+        <h2>Registro de Usuario</h2>
 
-            <td><?= $row['id'] ?></td>
-            <td><?= $row['nombre'] ?></td>
-            <td><?= $row['apellido'] ?></td>
-            <td><?= $row['correo'] ?></td>
+        <form action="insert.php" method="POST">
 
-            <td>
-                <a href="edit.php?id=<?= $row['id'] ?>">
-                    Editar
-                </a>
-                
-                <a
-                    href="delete.php?id=<?= $row['id'] ?>"
-                    onclick="return confirm('Eliminar usuario?')"
-                >
-                    Eliminar
-                </a>
-            </td>
+            <input
+                type="text"
+                name="nombre"
+                placeholder="Nombres"
+                required
+            >
 
-        </tr>
+            <input
+                type="text"
+                name="apellido"
+                placeholder="Apellidos"
+                required
+            >
 
-        <?php } ?>
+            <input
+                type="email"
+                name="correo"
+                placeholder="Correo Electrónico"
+                required
+            >
 
-    </table>
+            <input
+                type="password"
+                name="password"
+                placeholder="Contraseña"
+                required
+            >
+
+            <button class="register-btn" type="submit">
+                Registrar
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="table-card">
+
+        <h2>Usuarios Registrados</h2>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+
+            <?php while($row = $result->fetch_assoc()) { ?>
+
+            <tr>
+
+                <td><?= $row['id'] ?></td>
+                <td><?= $row['nombre'] ?></td>
+                <td><?= $row['apellido'] ?></td>
+                <td><?= $row['correo'] ?></td>
+
+                <td>
+
+                    <a
+                        class="edit-btn"
+                        href="edit.php?id=<?= $row['id'] ?>"
+                    >
+                        Editar
+                    </a>
+
+                    <a
+                        class="delete-btn"
+                        href="delete.php?id=<?= $row['id'] ?>"
+                        onclick="return confirm('Eliminar usuario?')"
+                    >
+                        Eliminar
+                    </a>
+
+                </td>
+
+            </tr>
+
+            <?php } ?>
+
+        </table>
+
+    </div>
 
 </div>
 
