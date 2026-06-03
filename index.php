@@ -75,6 +75,10 @@ $result = $conn->query("SELECT * FROM users");
             <td><?= $row['correo'] ?></td>
 
             <td>
+                <a href="edit.php?id=<?= $row['id'] ?>">
+                    Editar
+                </a>
+                
                 <a
                     href="delete.php?id=<?= $row['id'] ?>"
                     onclick="return confirm('Eliminar usuario?')"
